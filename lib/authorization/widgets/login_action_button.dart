@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginActionButton extends StatelessWidget {
   const LoginActionButton({super.key});
@@ -6,7 +7,7 @@ class LoginActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FilledButton(
-      onPressed: () {},
+      onPressed: () => context.go('/home'),
       style: FilledButton.styleFrom(
         backgroundColor: const Color(0xFF158A8A),
         minimumSize: const Size.fromHeight(50),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:product_list_task/api/product/products_api.dart';
 import 'package:product_list_task/authorization/controllers/login_controller.dart';
 import 'package:product_list_task/home/controllers/home_controller.dart';
-import 'package:product_list_task/home/screens/home_screen.dart';
+import 'package:product_list_task/router/go_router.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -26,12 +26,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Product List Task',
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      routerConfig: router,
     );
   }
 }
