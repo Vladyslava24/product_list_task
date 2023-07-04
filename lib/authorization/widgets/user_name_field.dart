@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:product_list_task/authorization/controllers/login_controller.dart';
+import 'package:provider/provider.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class UserNameField extends StatelessWidget {
@@ -30,6 +32,12 @@ class UserNameField extends StatelessWidget {
       ),
       validationMessages: {
         ValidationMessage.required: (_) => 'User name is required',
+        ValidationMessage.maxLength: (_) =>
+            'User name cannot have more than 250 symbols',
+      },
+      onChanged: (control) {
+        context.read<LoginController>().userName = control.value.toString();
+        control.markAsTouched();
       },
     );
   }

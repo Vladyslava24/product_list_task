@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:product_list_task/authorization/controllers/login_controller.dart';
 import 'package:product_list_task/authorization/widgets/login_action_button.dart';
+import 'package:product_list_task/authorization/widgets/login_failed_text.dart';
 import 'package:product_list_task/authorization/widgets/password_field.dart';
 import 'package:product_list_task/authorization/widgets/user_name_field.dart';
 import 'package:provider/provider.dart';
@@ -29,6 +30,7 @@ class LoginScreen extends StatelessWidget {
               UserNameField(),
               SizedBox(height: 20),
               PasswordField(),
+              LoginFailedText(),
               SizedBox(height: 40),
               LoginActionButton(),
             ],

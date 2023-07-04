@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:product_list_task/api/auth/auth_api.dart';
 import 'package:product_list_task/api/product/products_api.dart';
 import 'package:product_list_task/authorization/controllers/login_controller.dart';
 import 'package:product_list_task/home/controllers/home_controller.dart';
@@ -10,7 +11,7 @@ void main() {
     MultiProvider(
       providers: [
         ChangeNotifierProvider<LoginController>(
-          create: (context) => LoginController(),
+          create: (context) => LoginController(AuthApi()),
         ),
         ChangeNotifierProvider<HomeController>(
           create: (context) => HomeController(ProductsApi()),

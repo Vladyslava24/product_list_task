@@ -47,6 +47,12 @@ class PasswordField extends StatelessWidget {
       ),
       validationMessages: {
         ValidationMessage.required: (_) => 'Password is required',
+        ValidationMessage.maxLength: (_) =>
+            'Password cannot have more than 250 symbols',
+      },
+      onChanged: (control) {
+        context.read<LoginController>().password = control.value.toString();
+        control.markAsTouched();
       },
     );
   }

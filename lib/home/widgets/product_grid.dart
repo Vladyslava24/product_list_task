@@ -46,11 +46,11 @@ class ProductGrid extends StatelessWidget {
                     ),
                   ),
                   const RatingWidget(),
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('price'),
-                      Icon(Icons.favorite_border),
+                      Text(products[index].price.toString()),
+                      const Icon(Icons.favorite_border),
                     ],
                   )
                 ],
