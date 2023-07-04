@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:product_list_task/home/controllers/home_controller.dart';
 import 'package:product_list_task/home/widgets/product_grid.dart';
 import 'package:provider/provider.dart';
@@ -23,11 +24,18 @@ class _HomeScreenState extends State<HomeScreen> {
         context.select((HomeController controller) => controller.loadingFuture);
     return Scaffold(
       appBar: AppBar(
-        leading: const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 14),
-          child: Icon(Icons.menu),
+        leading: PopupMenuButton(
+          icon: const Icon(Icons.menu),
+          itemBuilder: (context) {
+            return [
+              PopupMenuItem<int>(
+                value: 0,
+                child: const Text("Log out"),
+                onTap: () => context.go('/'),
+              ),
+            ];
+          },
         ),
-        leadingWidth: 32,
         titleSpacing: 16,
         title: const SizedBox(
           height: 34,

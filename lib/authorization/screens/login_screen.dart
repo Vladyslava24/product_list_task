@@ -7,8 +7,19 @@ import 'package:product_list_task/authorization/widgets/user_name_field.dart';
 import 'package:provider/provider.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  @override
+  void initState() {
+    context.read<LoginController>().init();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -45,18 +45,22 @@ class ProductGrid extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                  const RatingWidget(),
+                  RatingWidget(
+                      initialRating: double.tryParse(
+                          products[index].rating.rate.toString())!),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(products[index].price.toString()),
-                      const Icon(Icons.favorite_border),
+                      const Icon(
+                        Icons.favorite,
+                        color: Color(0xFFFF505A),
+                      ),
                     ],
                   )
                 ],
               ),
             ),
-            //),
           );
         },
       ),

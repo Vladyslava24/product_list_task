@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:product_list_task/api/product/rating.dart';
 
 @immutable
 class Product extends Equatable {
@@ -10,6 +11,7 @@ class Product extends Equatable {
     required this.category,
     required this.description,
     required this.image,
+    required this.rating,
   });
 
   final int id;
@@ -18,6 +20,7 @@ class Product extends Equatable {
   final String category;
   final String description;
   final String image;
+  final Rating rating;
 
   @override
   List<Object?> get props => [id];
@@ -30,6 +33,7 @@ class Product extends Equatable {
       category: json['category'],
       description: json['description'],
       image: json['image'],
+      rating: Rating.fromJson(json['rating']),
     );
   }
 }
